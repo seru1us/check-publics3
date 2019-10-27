@@ -1,6 +1,6 @@
 # check-publics3
 
-# Check-PublicS3 Purpose and Overview
+# Purpose and Overview
 
 This documentation is supporting material for a coding exercise I was asked to perform for a potential employer. At a high level, the code's purpose is to check for publicly available s3 buckets. A few things to keep in mind when reading this code:
   - I mostly write code for customers, and am used to liberally commenting so others can change it easily (never had a complaint about that). For granular details and a step-by-step analysis, please refer to the source.
