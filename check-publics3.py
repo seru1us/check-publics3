@@ -35,7 +35,7 @@ def initialize_sqlite_db(sqlite_file):
         # This should just make a db file if it doesn't exist.
         sqlconn = sqlite3.connect(sqlite_file)
     except Error as sqlite_error:
-        # This honestly shouldn't ever happen, but assuming something won't fail is always a bad idae.
+        # This honestly shouldn't ever happen, but assuming something won't fail is always a bad idea.
         print(sqlite_error)
         sys.exit()
     finally:
