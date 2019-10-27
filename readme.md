@@ -2,7 +2,7 @@
 
 # Check-PublicS3 Purpose and Overview
 
-This documentation is supporting material for a coding excersize I was asked to perform for a potential employer. At a high level, the code's purpose was to check for publicly available s3 buckets. A few things to keep in mind when reading this code:
+This documentation is supporting material for a coding exercise I was asked to perform for a potential employer. At a high level, the code's purpose is to check for publicly available s3 buckets. A few things to keep in mind when reading this code:
   - I mostly write code for customers, and am used to liberally commenting so others can change it easily (never had a complaint about that). For granular details and a step-by-step analysis, please refer to the source.
   - The assumption was that this would be written in a matter of hours, so there are a number of notes and TODOs included where I would do something better given more time. With that said, I stayed true to the time allotment. 
 
@@ -15,9 +15,9 @@ The technical requriements and use cases that were requested:
   - Using the AWS API or libraries are allowed as well as consulting any online source or documentation
 
 ### Design Decisions and Architecture
-When considering how to architect this use tool, I decided to make a simple CLI tool that can be ran without any parameters. The main reason I created it in this way were due to the two requirements I was given: "make it a command-line tool" and "have it check for publicly accessible buckets". Having said that, I would like to point out that in a production environment I would suggest utilizing a different method to simply alert and respond to a discovered public bucket.
+When considering how to architect this use tool, I decided to make a simple CLI tool that can be ran without any parameters. The main reason I created it in this way were due to the two requirements I was given: "make it a command-line tool" and "have it check for publicly accessible buckets". Having said that, I would like to point out that in a production environment I would suggest using a different method to simply alert and respond to a discovered public bucket.
 
-While this application needs to be ran on a scheduled or interactive basis, for security events such as s3 ACL changes, best practices infer that incidents are handled in as close to real-time as possible. In this instance, I would suggest [utilizing s3 event notifications](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html) to audit changes and creation of s3 buckets. By listening for real-time events for changes, quick response to public s3 buckets can resolve any configuration issues or unauthorized changes in stored data.
+While this application needs to be ran on a scheduled or interactive basis, for security events such as s3 ACL changes, best practices dictate that incidents are handled in as close to real-time as possible. In this instance, I would suggest [utilizing s3 event notifications](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html) to audit changes and creation of s3 buckets. By listening for real-time events for changes, quick response to public s3 buckets can resolve any configuration issues or unauthorized changes in stored data.
 
 The Caveat to this is it requires additional AWS infrastructure- s3 event notifications integrate specifically with the following AWS platforms:
   - [Amazon Simple Notification Service (Amazon SNS) ](https://aws.amazon.com/sns/)
@@ -75,7 +75,7 @@ In order to align with security best practices Least Privilege and Separation of
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "Stmt1572210494003",
+      "Sid": "XXXXXXXXXXXXXXX",
       "Action": [
         "s3:GetBucketAcl",
         "s3:ListAllMyBuckets",
@@ -111,5 +111,5 @@ The persistent storage is kept in a very simple sqlite database that is provisio
 
 Notifications are handles via syslog output. Currently, the implementation is very basic and is a large stretch from [proper rfc5424 standards](https://tools.ietf.org/html/rfc5424), but can still be integrated with any enterprise logging and alerting platform to properly create a formal incident. 
 
-Best practices defer aggregating security events, such as the events this script creates, to a centralized platform or SIEM to be furthe ingested for auditing. 
+Best practices defer aggregating security events, such as the events this script creates, to a centralized platform or SIEM to be further ingested for auditing. 
 
