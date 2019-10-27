@@ -1,9 +1,5 @@
 # check-publics3
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
-
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
-
 # Check-PublicS3 Purpose and Overview
 
 This documentation is supporting material for a coding excersize I was asked to perform for a potential employer. At a high level, the code's purpose was to check for publicly available s3 buckets. A few things to keep in mind when reading this code:
