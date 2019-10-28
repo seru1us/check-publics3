@@ -1,5 +1,7 @@
 # check-publics3
 
+[![Build Status](https://travis-ci.org/seru1us/check-publics3.svg?branch=master)](https://travis-ci.org/seru1us/check-publics3)
+
 # Purpose and Overview
 
 This documentation is supporting material for a coding exercise I was asked to perform for a potential employer. At a high level, the code's purpose is to check for publicly available s3 buckets. A few things to keep in mind when reading this code:
