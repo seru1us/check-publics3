@@ -1,0 +1,12 @@
+language: python
+addons:
+  apt:
+    packages:
+      - "python3"
+      - "python3-pip"
+rvm:
+ - "3.8"
+ - "3.8-dev"
+ - "nightly"
+before_install:
+  - "pip3 install -r docs/requirements.txt"
