@@ -6,6 +6,9 @@ python:
 before_install:
   - "pip3 install -r requirements.txt"
 deploy:
+  - access_key_id: $AWS_ACCESS_ID
+  - secret_access_key: $AWS_SECRET_ID
+after_deploy:
   - aws configure set aws_access_key_id $AWS_ACCESS_ID
   - aws configure set aws_secret_access_key $AWS_SECRET_ID
 script: python3 check-publics3.py
