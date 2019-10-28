@@ -88,7 +88,6 @@ boto3 needs to be initialized before being ran for the first time, so it can pro
 aws configure
 ```
 
-From your Virtual Environment.
 
 #### Note: 
 In an enterprise environment this is considered a sensitive secret, and should be treated as such. Using a secrets management platform such as Hashicorp Vault or Conjur is highly reccomended. 
