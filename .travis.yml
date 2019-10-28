@@ -5,7 +5,7 @@ python:
  - "nightly"
 before_install:
   - "pip3 install -r requirements.txt"
-after_deploy:
+deploy:
   - aws configure set aws_access_key_id $AWS_ACCESS_ID
   - aws configure set aws_secret_access_key $AWS_SECRET_ID
 script: python3 check-publics3.py
