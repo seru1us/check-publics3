@@ -1,16 +1,11 @@
 language: python
-addons:
-  apt:
-    packages:
-      - "python3"
-      - "python3-pip"
 python:
  - "3.8"
  - "3.8-dev"
  - "nightly"
 before_install:
   - "pip3 install -r requirements.txt"
- after_deploy:
+after_deploy:
   - aws configure set aws_access_key_id $AWS_ACCESS_ID
   - aws configure set aws_secret_access_key $AWS_SECRET_ID
 script: python3 check-publics3.py
