@@ -50,16 +50,7 @@ git clone https://github.com/seru1us/check-publics3
 python3 -m venv venv
 source venv/bin/activate
 ```
-
-...and when you are done, deactivate the virtual environment.
-
-```sh
-deactivate
-```
-
-Currently, this will run in vanilla python3 with the boto3 library installed. To confirm all of the libraries are present on your machine, feel free to utilize the included requriements.txt by running:
-
-...but of course, this practice is only to ensure packages are installed if the requirements are changed in the future. Right now there is only one package mentioned in that file.
+In order to install boto3, use the following pip command:
 
 ```sh
 pip3 install -r requirements.txt
